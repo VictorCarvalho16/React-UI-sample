@@ -5,6 +5,11 @@ const Container = styled.aside`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 700px) {
+    width: 90%;
+    margin-top: 1rem;
+  }
 `;
 
-export { Container };
+export default Container;

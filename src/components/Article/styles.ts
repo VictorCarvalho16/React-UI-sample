@@ -7,6 +7,10 @@ const Container = styled.article`
   flex-direction: column;
   align-items: center;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+  @media (max-width: 700px) {
+    width: 90%
+  }
 `;
 
 const TasksHeader = styled.div`

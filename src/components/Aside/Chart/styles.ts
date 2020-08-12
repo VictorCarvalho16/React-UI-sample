@@ -6,6 +6,7 @@ const Container = styled.div`
   margin-bottom: 2rem;
   background-color: var(--white);
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  margin-top: 1rem;
 `;
 
 const ChartsHeader = styled.div`

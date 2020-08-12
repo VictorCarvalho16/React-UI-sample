@@ -12,6 +12,14 @@ const MenuBase = styled.section<MenuProps>`
   position: relative;
   float: left;
 
+  @media (max-width: 1200px) {
+    position: ${(props) => (props.showMenu ? 'fixed' : 'inherit')};
+  }
+
+  @media (max-width: 700px) {
+    min-height: ${(props) => (props.showMenu ? '96vh' : 'inherit')};
+  }
+
   h1 {
     padding: 1.2rem;
     padding-bottom: 0rem;

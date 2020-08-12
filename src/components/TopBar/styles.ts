@@ -7,6 +7,11 @@ const Bar = styled.div`
   background-color: var(--background-top);
   border-bottom: 1px solid var(--gray);
   max-height: 69px;
+
+  @media (max-width: 700px) {
+    justify-content: flex-end;
+  }
+  
 `;
 
 const SearchBox = styled.div`
@@ -15,6 +20,10 @@ const SearchBox = styled.div`
   align-items: center;
   padding: 0.2rem;
   padding: 0.07rem;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
 
   input {
     border: none;
