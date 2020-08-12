@@ -7,7 +7,7 @@ interface MenuProps {
 const MenuBase = styled.section<MenuProps>`
   background-color: var(--white);
   width: min(299px, 100%);
-  min-height: ${(props) => (props.showMenu ? '100vh' : 'inherit')};
+  min-height: ${(props) => (props.showMenu ? 'max(600px, 100vh)' : 'inherit')};
   margin-top: -1.2rem;
   position: relative;
   float: left;

@@ -6,6 +6,7 @@ const Bar = styled.div`
   justify-content: space-between;
   background-color: var(--background-top);
   border-bottom: 1px solid var(--gray);
+  max-height: 69px;
 `;
 
 const SearchBox = styled.div`
@@ -53,11 +54,11 @@ const Notification = styled.div`
   span {
     width: 10px;
     height: 10px;
-    right: 18px;
-    top: 18px;
+    right: -15px;
+    top: -33px;
     border-radius: 50%;
     display: block;
-    position: fixed;
+    position: relative;
     background-color: var(--red);
   }
 `;

@@ -5,14 +5,18 @@
 
 :root {
   --primary: #25a5f2;
+  --primary-hover: #25a3f2b2;
   --secondary: #4dc896;
+  --secondary-hover: #4dc897bd;
   --background: #eef0f2;
   --background-top: #ffffff66;
   --white: #ffffff;
   --gray: #c4d4d9;
   --gray-text: #929b9e;
   --red: #f7685b;
+  --red-hover: #f7685bb9;
   --yellow: #ffc76b;
+  --yellow-hover: #ffc66bab;
 }
 
 html, body {
