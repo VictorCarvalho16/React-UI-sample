@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import Task from './Task';
+import { getTaskActions } from '../../redux/taskActionsSlice';
 
 import {
   Container,
@@ -14,6 +16,8 @@ import {
 } from './styles';
 
 function Article() {
+  const actions = useSelector(getTaskActions);
+
   return (
     <Container>
       <TasksHeader>
@@ -79,28 +83,31 @@ function Article() {
 
       <Content>
         <Task
+          id={0}
           description="Send benefit review by Sunday"
           type="Reminder"
           date="December 23, 2018"
           userImg="https://media.istockphoto.com/photos/african-mature-man-with-spectacles-picture-id1152603187"
           userName="George Fields"
-          Action="Completed"
+          Action={actions[0]}
         />
         <Task
+          id={1}
           description="Invite to office meet-up"
           type="Call"
           date="December 23, 2018"
           userImg="https://media.istockphoto.com/photos/portrait-of-afro-girl-in-eyeglasses-picture-id995745018"
           userName="Rebecca Moore"
-          Action="Ended"
+          Action={actions[1]}
         />
         <Task
+          id={2}
           description="Office meet-up"
           type="Event"
           date="December 23, 2018"
           userImg="https://media.istockphoto.com/photos/beautiful-babe-in-specs-picture-id1089633766"
           userName="Lindsey Stroud"
-          Action="Active"
+          Action={actions[2]}
         />
       </Content>
       <ShowMore>Show More</ShowMore>

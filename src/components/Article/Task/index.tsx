@@ -1,5 +1,8 @@
 import React from 'react';
 import { FaPen, FaTrash } from 'react-icons/fa';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { getTaskActions, setTaskActions } from '../../../redux/taskActionsSlice';
 
 import {
   Container,
@@ -19,6 +22,7 @@ import {
 } from './styles';
 
 interface ITask {
+  id: number;
   description: string;
   type: string;
   date: string;
@@ -28,9 +32,31 @@ interface ITask {
 }
 
 const Task: React.FC<ITask> = ({
-  description, type, date, userImg, userName, Action,
+  id, description, type, date, userImg, userName, Action,
 }) => {
-  let colors = [];
+  const actions = useSelector(getTaskActions);
+  const dispatch = useDispatch();
+
+  function changeTask(option: string) {
+    const temp: string[] = [...actions];
+    switch (option) {
+      case 'secondary':
+        temp[id] = 'Completed';
+        break;
+      case 'yellow':
+        temp[id] = 'Active';
+        break;
+      case 'red':
+        temp[id] = 'Ended';
+        break;
+      default:
+        break;
+    }
+
+    dispatch(setTaskActions(temp));
+  }
+
+  let colors: string[];
 
   switch (Action) {
     case 'Completed':
@@ -67,8 +93,8 @@ const Task: React.FC<ITask> = ({
 
         <TaskButtons>
           <Buttons>
-            <ButtonStyle theme={colors[1]} />
-            <ButtonStyle theme={colors[2]} />
+            <ButtonStyle theme={colors[1]} onClick={() => changeTask(colors[1])} />
+            <ButtonStyle theme={colors[2]} onClick={() => changeTask(colors[2])} />
             <ButtonControl>
               <FaPen />
             </ButtonControl>
